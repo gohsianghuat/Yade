@@ -41,6 +41,8 @@ Body::id_t BodyContainer::insert(shared_ptr<Body>& b, Body::id_t id){
 	b->timeBorn=scene->time;
 	b->id=id;
 	
+	scene->interactions->dirty = true;
+	
 	body[id]=b;
 	return id;
 }
